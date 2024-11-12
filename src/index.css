@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    padding: 0px;
+}
+
+@media (min-width: 768px) {
+    body{
+        padding: 0px 200px;
+    }
+}
