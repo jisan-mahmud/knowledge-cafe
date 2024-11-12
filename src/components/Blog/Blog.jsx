@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark as faRegularBookmark } from '@fortawesome/free-regular-svg-icons';
 // import { faBoomark} from '@fortawesome/free-solid-svg-icons';
 
-const Blog = ({blog}) => {
+const Blog = ({blog, handleReadingTime}) => {
     const {title, cover,author_name, author_img, publish_date, reading_time, hash_tags} = blog
     return (
-        <div className='my-10 border-b pb-10 last:border-0'>
+        <div className='my-10 first:my-0 border-b pb-10 last:border-0'>
             <div className='my-2'>
                 <img className='rounded-md' src={cover} alt="" />
             </div>
@@ -33,7 +33,7 @@ const Blog = ({blog}) => {
                     ))
                 }
             </div>
-            <button className='text-blue-600 underline'>Mark as read</button>
+            <button onClick={() => handleReadingTime(reading_time)} className='text-blue-600 underline'>Mark as read</button>
         </div>
     );
 };

@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import Blog from '../Blog/Blog';
 
-const Blogs = () => {
+const Blogs = ({handleReadingTime}) => {
     const [blogs, setBlogs] = useState([])
-
+  
     useEffect(() => {
         fetch('blogs.json')
         .then(response => response.json())
         .then(json => setBlogs(json))
     }, [])
     return (
-        <div className='w-2/3'>
+        <div>
             {
                 blogs.map((blog, idx) => (
-                    <Blog key={idx} blog={blog}></Blog>
+                    <Blog handleReadingTime={handleReadingTime} key={idx} blog={blog}></Blog>
                 ))
             }
         </div>
